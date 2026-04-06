@@ -1,0 +1,6 @@
+# ads.txt — Authorized Digital Sellers (Google AdSense)
+# Must match the publisher ID in js/adsense-config.js (TD_ADSENSE_CLIENT).
+# After approval, add ONE non-comment line from AdSense → Sites → ads.txt, e.g.:
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+#
+# Lines starting with # are comments (https://iabtechlab.com/ads-txt/)

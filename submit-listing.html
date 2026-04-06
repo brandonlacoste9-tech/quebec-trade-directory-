@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Submit or claim a listing on Québec Trade Directory." />
+  <meta name="robots" content="index, follow" />
+  <title>List your business | Québec Trade Directory</title>
+  <link rel="canonical" href="https://directory.example/submit-listing.html" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#submit-main">Skip to form</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">ON</span>
+        <div>
+          <p class="site-title" style="margin: 0; font-size: 1.15rem">Québec Trade Directory</p>
+          <p class="tagline">Submit / claim a listing</p>
+        </div>
+      </div>
+    </div>
+    <div class="site-nav-bar">
+      <nav class="wrap site-nav" aria-label="Site sections">
+        <a href="index.html">Directory</a>
+        <a href="submit-listing.html" aria-current="page">List your business</a>
+        <a href="dashboard.html">Owner dashboard</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="submit-main" class="wrap legal-page">
+    <h1>List or claim your business</h1>
+    <p class="legal-meta">
+      Owners can request a new listing or claim an existing one. In production you’ll verify licences (where applicable),
+      insurance, and billing before showing a <strong>verified</strong> badge.
+    </p>
+
+    <form class="contact-form" id="submit-form" novalidate>
+      <div class="form-grid">
+        <label class="field" style="grid-column: 1 / -1">
+          <span class="field-label">Legal / operating name</span>
+          <input type="text" name="company" class="input" required autocomplete="organization" />
+        </label>
+        <label class="field">
+          <span class="field-label">Trade category</span>
+          <input type="text" name="trade" class="input" required placeholder="e.g. Plumber" />
+        </label>
+        <label class="field">
+          <span class="field-label">City</span>
+          <input type="text" name="city" class="input" required />
+        </label>
+        <label class="field" style="grid-column: 1 / -1">
+          <span class="field-label">Work email</span>
+          <input type="email" name="email" class="input" required autocomplete="email" />
+        </label>
+        <label class="field" style="grid-column: 1 / -1">
+          <span class="field-label">Website (optional)</span>
+          <input type="url" name="website" class="input" autocomplete="url" />
+        </label>
+        <label class="field" style="grid-column: 1 / -1">
+          <span class="field-label">Phone</span>
+          <input type="tel" name="phone" class="input" autocomplete="tel" />
+        </label>
+        <label class="field" style="grid-column: 1 / -1">
+          <span class="field-label">Notes (service area, RBQ / licence #, CNESST if applicable)</span>
+          <textarea name="notes" class="input textarea" rows="4"></textarea>
+        </label>
+      </div>
+      <p class="form-hint">
+        Demo: submits via <strong>mailto</strong>. Replace with a database-backed workflow and payment for featured slots if needed.
+      </p>
+      <button type="submit" class="btn btn-primary">Submit request</button>
+    </form>
+
+    <h2>After you launch</h2>
+    <ul>
+      <li>Email verification for new domains</li>
+      <li>Owner <a href="dashboard.html">dashboard</a> for hours, photos, and review replies</li>
+      <li>Moderation queue for user-submitted reviews</li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <nav class="footer-links" aria-label="Site">
+        <a href="index.html">Home</a>
+        <span class="footer-dot" aria-hidden="true">·</span>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("submit-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const subject = encodeURIComponent("Listing request: " + (fd.get("company") || ""));
+      const body = encodeURIComponent(
+        [
+          "Company: " + fd.get("company"),
+          "Trade: " + fd.get("trade"),
+          "City: " + fd.get("city"),
+          "Email: " + fd.get("email"),
+          "Website: " + fd.get("website"),
+          "Phone: " + fd.get("phone"),
+          "",
+          fd.get("notes"),
+        ].join("\n")
+      );
+      window.location.href = "mailto:you@example.com?subject=" + subject + "&body=" + body;
+    });
+  </script>
+  <style>
+    .contact-form { margin: 1.25rem 0 2rem; max-width: 560px; }
+    .form-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .textarea { min-height: 100px; resize: vertical; font: inherit; }
+    .form-hint { font-size: 0.82rem; color: var(--muted); max-width: 54ch; margin: 0.75rem 0 1rem; }
+    .btn-primary {
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 1.25rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+      color: var(--bg);
+    }
+    .btn-primary:hover { filter: brightness(1.08); }
+  </style>
+</body>
+</html>

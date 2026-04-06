@@ -1,0 +1,26 @@
+# Québec Trade Directory
+
+> Skilled trades and contractors in Québec, Canada (static directory website).
+
+## What this site is
+Québec-only discovery page for trade categories such as plumbing, electrical, roofing, HVAC, concrete, landscaping, renovations, and many other construction and home-service trades. Visitors filter by trade type, city, and Québec economic/administrative-style region groupings used in the UI.
+
+## Geography
+Coverage is limited to the province of Québec—not other provinces or territories.
+
+## Data quality
+Demo listings may be sample data. Users should independently verify licences (e.g. RBQ, trade-specific requirements), insurance, and references before hiring any contractor. Rules and language requirements in Québec can differ from other provinces.
+
+## Official URL (set when deployed)
+Canonical site URL and sitemap should match your production domain. Template placeholder used in development: https://directory.example/
+
+## Contact
+Add your contact or submission policy here when the site is live.
+
+## Features (starter)
+- Directory filters sync to shareable query strings (?trade= &city= &region= &q= &fav=1).
+- Favourites stored in browser localStorage; demo verified badges, hours, review aggregates.
+- Pages: contact + newsletter stub, submit/claim listing (mailto demo), owner dashboard stub, sample SEO city+trade guides under /seo/, privacy policy, AdSense placeholders.
+
+## Analytics
+Uncomment GA4 in index.html when you have a measurement ID; link the property in Google Search Console.

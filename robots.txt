@@ -1,0 +1,6 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# After you deploy, set Sitemap to your real origin (same as canonical URL in index.html).
+Sitemap: https://directory.example/sitemap.xml
